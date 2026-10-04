@@ -7567,6 +7567,7 @@ template [[host_name("kernel_flash_attn_ext_vec_q8_0_dk576_dv512")]] kernel flas
 constant int32_t FC_flash_attn_ext_vec_reduce_DV  [[function_constant(FC_FLASH_ATTN_EXT_VEC_REDUCE + 0)]];
 constant int32_t FC_flash_attn_ext_vec_reduce_NWG [[function_constant(FC_FLASH_ATTN_EXT_VEC_REDUCE + 1)]];
 
+[[max_total_threads_per_threadgroup(1024)]]
 kernel void kernel_flash_attn_ext_vec_reduce(
         constant ggml_metal_kargs_flash_attn_ext_vec_reduce & args,
         device  const char * htmp,
